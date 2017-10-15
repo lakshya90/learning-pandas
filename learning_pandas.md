@@ -1,4 +1,4 @@
-### Importing Data
+### 1. Importing Data
 #### Let’s get the data to our local machines
 
 wget https://raw.githubusercontent.com/lakshya90/learning-pandas/master/titanic.csv (curl -O <url> for mac)
@@ -13,7 +13,7 @@ import pandas as pd
 df = pd.read_csv('titanic.csv')
 ``` 
 
-### Viewing/Inspecting Data
+### 2. Viewing/Inspecting Data
 #### Let’s see number of rows and columns
 ```python
 df.shape       # Output : 891,12
@@ -41,7 +41,7 @@ df['Survived'].value_counts();
 df['Pclass'].value_counts() 
 ```
 
-### Selection
+### 3. Selection
 #### Let’s see the type when we pick a column
 ```python
 d = df['PassengerId']; type(d)   #<class ‘pandas.core.series.Series’>  
@@ -51,7 +51,7 @@ d = df['PassengerId']; type(d)   #<class ‘pandas.core.series.Series’>
 df.iloc[654,:]
 ```
 
-### Data Cleaning
+### 4. Data Cleaning
 #### A few columns have NaN values. How do I know?
 ```python
 df.describe() #Check count of all features
@@ -68,7 +68,7 @@ pd.isnull(df['Cabin'])
 df[df['Embarked'].isnull()]
 ```
 
-### Filter, Sort, Group By
+### 5. Filter, Sort, Group By
 #### Let’s see the count of upper class values
 ```python
 df['Pclass'].value_counts(); s = df['Pclass'] < 2; s.value_counts()
@@ -83,7 +83,7 @@ df.groupby('Sex')['Survived'].value_counts()
 df.groupby('Sex').Survived.mean()
 ```
 
-### Statistics
+### 6. Statistics
 #### Let’s see some statistics for categorical fields
 
 ```python
@@ -96,7 +96,7 @@ df['Cabin'].count()    #Count of all valid ‘Cabin’ values
 df['Fare'].max()   #Maximum fare paid for the ticket
 ```
 
-### Exporting the Data
+### 7. Exporting the Data
 #### Let's write the data to a csv file
 
 ```python
